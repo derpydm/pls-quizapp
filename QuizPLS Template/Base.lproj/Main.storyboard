@@ -25,18 +25,27 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3Z-zy-5lq">
-                                <rect key="frame" x="190" y="482.5" width="34" height="30"/>
-                                <state key="normal" title="Start"/>
+                                <rect key="frame" x="189.5" y="482.5" width="35" height="30"/>
+                                <state key="normal" title="MCQ"/>
                                 <connections>
                                     <segue destination="OK3-qS-4wK" kind="presentation" id="bRQ-2f-DD0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPf-kZ-pds">
+                                <rect key="frame" x="163" y="512.5" width="88" height="30"/>
+                                <state key="normal" title="Open-ended"/>
+                                <connections>
+                                    <segue destination="bih-3v-sYx" kind="showDetail" id="csq-e0-iR8"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ocF-eH-II7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="1sE-zn-PYL"/>
+                            <constraint firstItem="xPf-kZ-pds" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Amn-52-OpW"/>
                             <constraint firstItem="j3Z-zy-5lq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Plv-mo-nJB"/>
                             <constraint firstItem="j3Z-zy-5lq" firstAttribute="top" secondItem="ocF-eH-II7" secondAttribute="bottom" constant="300" id="VKt-Er-xOK"/>
+                            <constraint firstItem="xPf-kZ-pds" firstAttribute="top" secondItem="j3Z-zy-5lq" secondAttribute="bottom" id="dgd-Ju-G2O"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ocF-eH-II7" secondAttribute="trailing" constant="150" id="oiK-eh-tfA"/>
                             <constraint firstItem="ocF-eH-II7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="s5J-7c-TpH"/>
                         </constraints>
@@ -46,6 +55,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="59" y="28"/>
+        </scene>
+        <!--Open End Quiz View Controller-->
+        <scene sceneID="rVI-XU-Od9">
+            <objects>
+                <viewController id="bih-3v-sYx" customClass="OpenEndQuizViewController" customModule="QuizPLS_Template" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9gn-4o-kGi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vB-iz-Obv">
+                                <rect key="frame" x="30" y="144" width="354" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Answer" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Hh-CG-kOs">
+                                <rect key="frame" x="30" y="332.5" width="354" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZz-TL-1yV">
+                                <rect key="frame" x="181.5" y="432.5" width="51" height="30"/>
+                                <state key="normal" title="Answer"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="bih-3v-sYx" eventType="touchUpInside" id="Bp0-m3-Da0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Auv-Df-VKy" firstAttribute="trailing" secondItem="6Hh-CG-kOs" secondAttribute="trailing" constant="30" id="01m-p2-Mkl"/>
+                            <constraint firstItem="5vB-iz-Obv" firstAttribute="leading" secondItem="Auv-Df-VKy" secondAttribute="leading" constant="30" id="Gl3-sO-pHw"/>
+                            <constraint firstItem="Auv-Df-VKy" firstAttribute="trailing" secondItem="5vB-iz-Obv" secondAttribute="trailing" constant="30" id="Vjn-zK-WoE"/>
+                            <constraint firstItem="6Hh-CG-kOs" firstAttribute="top" secondItem="5vB-iz-Obv" secondAttribute="bottom" constant="150" id="W1a-9s-hTv"/>
+                            <constraint firstItem="6Hh-CG-kOs" firstAttribute="leading" secondItem="Auv-Df-VKy" secondAttribute="leading" constant="30" id="Yzp-Gi-Zsg"/>
+                            <constraint firstItem="5vB-iz-Obv" firstAttribute="top" secondItem="Auv-Df-VKy" secondAttribute="top" constant="100" id="eP5-zS-5ba"/>
+                            <constraint firstItem="cZz-TL-1yV" firstAttribute="top" secondItem="6Hh-CG-kOs" secondAttribute="bottom" constant="70" id="fOb-aN-5bA"/>
+                            <constraint firstItem="5vB-iz-Obv" firstAttribute="centerX" secondItem="Auv-Df-VKy" secondAttribute="centerX" id="nTF-B9-Kz9"/>
+                            <constraint firstItem="cZz-TL-1yV" firstAttribute="centerX" secondItem="Auv-Df-VKy" secondAttribute="centerX" id="owI-KQ-MBv"/>
+                            <constraint firstItem="6Hh-CG-kOs" firstAttribute="centerX" secondItem="Auv-Df-VKy" secondAttribute="centerX" id="xWW-8h-5J4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Auv-Df-VKy"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="eqi-tf-Hhx" appends="YES" id="r2o-FL-lPR"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="answerButton" destination="cZz-TL-1yV" id="n8o-Eo-eoJ"/>
+                        <outlet property="button" destination="cZz-TL-1yV" id="xda-3V-gyB"/>
+                        <outlet property="questionLabel" destination="5vB-iz-Obv" id="rHy-dW-nxn"/>
+                        <outlet property="tapGestureRecogniser" destination="eqi-tf-Hhx" id="8gw-BJ-d0o"/>
+                        <outlet property="textField" destination="6Hh-CG-kOs" id="C3W-Rt-CwG"/>
+                        <segue destination="k7c-hJ-EQn" kind="presentation" identifier="toResultsFromOE" id="yM0-2z-D5S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wge-MM-mxj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="eqi-tf-Hhx">
+                    <connections>
+                        <action selector="updateQuestion:" destination="bih-3v-sYx" id="vBX-Ej-BxZ"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="665" y="620"/>
         </scene>
         <!--QuizViewController-->
         <scene sceneID="JK1-a7-gUt">
@@ -205,4 +279,7 @@
             <point key="canvasLocation" x="2297" y="19"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="b7U-aa-yhI"/>
+    </inferredMetricsTieBreakers>
 </document>

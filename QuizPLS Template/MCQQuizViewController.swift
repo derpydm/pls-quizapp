@@ -21,13 +21,19 @@ class MCQQuizViewController: UIViewController {
         if currentQuestion > questions.count - 1 {
             currentQuestion = 0
             performSegue(withIdentifier: "toResults", sender: self)
+        } else {
+            question = questions[currentQuestion]
+            updateView(with: question)
         }
-        question = questions[currentQuestion]
-        updateView(with: question)
+        
+        
         tapGestureRecogniser.isEnabled = false
     }
     func updateView(with question: MCQQuestion) {
-
+        aButton.isUserInteractionEnabled = true
+        bButton.isUserInteractionEnabled = true
+        cButton.isUserInteractionEnabled = true
+        dButton.isUserInteractionEnabled = true
         questionLabel.text = question.question
         aButton.setTitle(question.ans1, for: .normal)
         bButton.setTitle(question.ans2, for: .normal)
@@ -63,6 +69,10 @@ class MCQQuizViewController: UIViewController {
             questionLabel.text = "Wrong! (Tap for next question)"
         }
         tapGestureRecogniser.isEnabled = true
+        aButton.isUserInteractionEnabled = false
+        bButton.isUserInteractionEnabled = false
+        cButton.isUserInteractionEnabled = false
+        dButton.isUserInteractionEnabled = false
     }
 
     // MARK: - Navigation

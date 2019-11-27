@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51B0FBAC238E222B0013CD28 /* OpenEndQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B0FBAB238E222B0013CD28 /* OpenEndQuizViewController.swift */; };
 		51F979EC238E0AF4001FF9FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F979EB238E0AF4001FF9FB /* AppDelegate.swift */; };
 		51F979EE238E0AF4001FF9FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F979ED238E0AF4001FF9FB /* ViewController.swift */; };
 		51F979F1238E0AF4001FF9FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51F979EF238E0AF4001FF9FB /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		51B0FBAB238E222B0013CD28 /* OpenEndQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenEndQuizViewController.swift; sourceTree = "<group>"; };
 		51F979E8238E0AF4001FF9FB /* QuizPLS Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QuizPLS Template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51F979EB238E0AF4001FF9FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51F979ED238E0AF4001FF9FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				51F979EB238E0AF4001FF9FB /* AppDelegate.swift */,
 				51F979ED238E0AF4001FF9FB /* ViewController.swift */,
 				51F979EF238E0AF4001FF9FB /* Main.storyboard */,
+				51B0FBAB238E222B0013CD28 /* OpenEndQuizViewController.swift */,
 				51F979FF238E0C84001FF9FB /* Question.swift */,
 				51F979FD238E0C5B001FF9FB /* MCQQuizViewController.swift */,
 				51F97A01238E1AB1001FF9FB /* ResultsViewController.swift */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51F979EE238E0AF4001FF9FB /* ViewController.swift in Sources */,
+				51B0FBAC238E222B0013CD28 /* OpenEndQuizViewController.swift in Sources */,
 				51F97A00238E0C84001FF9FB /* Question.swift in Sources */,
 				51F979EC238E0AF4001FF9FB /* AppDelegate.swift in Sources */,
 				51F97A02238E1AB1001FF9FB /* ResultsViewController.swift in Sources */,

@@ -15,3 +15,7 @@ struct MCQQuestion {
     var ans4: String
     var correctAnswer: String
 }
+struct OEQuestion {
+    var question: String
+    var correctAnswer: String
+}
