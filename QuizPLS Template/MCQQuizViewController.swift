@@ -7,8 +7,25 @@
 //
 
 import UIKit
-
+var timer: Timer!
 class MCQQuizViewController: UIViewController {
+    var time = 10.0
+    @objc func updateTimer() {
+        if time < 0 {
+            timer.invalidate()
+            time = 10.0
+            timerLabel.text = "Out of time! (tap to continue)"
+            
+            tapGestureRecogniser.isEnabled = true
+            aButton.isUserInteractionEnabled = false
+            bButton.isUserInteractionEnabled = false
+            cButton.isUserInteractionEnabled = false
+            dButton.isUserInteractionEnabled = false
+        } else {
+            time -= 0.01
+            timerLabel.text = "⏱: " + String(round(time*100)/100)
+        }
+    }
     @IBOutlet weak var timerLabel: UILabel!
     var questions = [MCQQuestion(question: "Answer is 3", ans1: "122", ans2: "434", ans3: "3", ans4: "ieheh", correctAnswer: "3"), MCQQuestion(question: "Answer is 122", ans1: "122", ans2: "434", ans3: "3", ans4: "ieheh", correctAnswer: "122")]
     var currentQuestion = 0
@@ -18,6 +35,7 @@ class MCQQuizViewController: UIViewController {
     @IBOutlet weak var questionLabel: UILabel!
     @IBAction func updateQuestion(_ sender: Any) {
         currentQuestion += 1
+        time = 10
         if currentQuestion > questions.count - 1 {
             currentQuestion = 0
             performSegue(withIdentifier: "toResults", sender: self)
@@ -39,6 +57,8 @@ class MCQQuizViewController: UIViewController {
         bButton.setTitle(question.ans2, for: .normal)
         cButton.setTitle(question.ans3, for: .normal)
         dButton.setTitle(question.ans4, for: .normal)
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        
     }
     @IBOutlet weak var aButton: UIButton!
     @IBOutlet weak var cButton: UIButton!
@@ -46,7 +66,6 @@ class MCQQuizViewController: UIViewController {
     @IBOutlet weak var dButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        timerLabel.isHidden = true
         aButton.layer.cornerRadius = 10
         aButton.layer.borderWidth = 1
         bButton.layer.cornerRadius = 10
@@ -56,23 +75,47 @@ class MCQQuizViewController: UIViewController {
         dButton.layer.borderWidth = 1
         dButton.layer.cornerRadius = 10
         question = questions[0]
+        
         updateView(with: question)
         // Do any additional setup after loading the view.
     }
     
 
     @IBAction func buttonPressed(_ sender: UIButton) {
-        if sender.currentTitle! == question.correctAnswer {
-            questionLabel.text = "Correct! (Tap for next question)"
-            score += 1
-        } else {
-            questionLabel.text = "Wrong! (Tap for next question)"
-        }
+        
+        timer.invalidate()
+        checkAnswer(with: sender.currentTitle!)
         tapGestureRecogniser.isEnabled = true
         aButton.isUserInteractionEnabled = false
         bButton.isUserInteractionEnabled = false
         cButton.isUserInteractionEnabled = false
         dButton.isUserInteractionEnabled = false
+    }
+    func checkAnswer(with answer: String) {
+        if currentQuestion > questions.count - 1 {
+            if answer == question.correctAnswer {
+                if time > 7.5 {
+                    score += 3
+                } else if time > 3 {
+                    score += 2
+                } else {
+                    score += 1
+                }
+                questionLabel.text = "Correct! (Tap for next question)"
+            }
+            
+        } else if answer == question.correctAnswer {
+            if time > 7.5 {
+                score += 3
+            } else if time > 3 {
+                score += 2
+            } else {
+                score += 1
+            }
+            questionLabel.text = "Correct! (Tap for next question)"
+        } else {
+            questionLabel.text = "Wrong! (Tap for next question)"
+        }
     }
 
     // MARK: - Navigation

@@ -192,7 +192,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bel-ec-UMv">
-                                <rect key="frame" x="162" y="682.5" width="90" height="20.5"/>
+                                <rect key="frame" x="162" y="612.5" width="90" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -207,7 +207,7 @@
                             <constraint firstItem="KmM-Gv-p88" firstAttribute="top" secondItem="8mt-nQ-kvc" secondAttribute="top" constant="100" id="Xve-mj-p41"/>
                             <constraint firstItem="8mt-nQ-kvc" firstAttribute="trailing" secondItem="jvm-fq-1Fh" secondAttribute="trailing" constant="20" id="Y13-S8-XOd"/>
                             <constraint firstItem="jvm-fq-1Fh" firstAttribute="top" secondItem="KmM-Gv-p88" secondAttribute="bottom" constant="200" id="fs8-df-Q0F"/>
-                            <constraint firstItem="bel-ec-UMv" firstAttribute="top" secondItem="jvm-fq-1Fh" secondAttribute="bottom" constant="100" id="k48-sj-tmr"/>
+                            <constraint firstItem="bel-ec-UMv" firstAttribute="top" secondItem="jvm-fq-1Fh" secondAttribute="bottom" constant="30" id="k48-sj-tmr"/>
                             <constraint firstItem="jvm-fq-1Fh" firstAttribute="leading" secondItem="8mt-nQ-kvc" secondAttribute="leading" constant="20" id="reA-Q2-T3E"/>
                             <constraint firstItem="KmM-Gv-p88" firstAttribute="centerX" secondItem="8mt-nQ-kvc" secondAttribute="centerX" id="vDQ-Hu-aoL"/>
                             <constraint firstItem="8mt-nQ-kvc" firstAttribute="trailing" secondItem="KmM-Gv-p88" secondAttribute="trailing" constant="30" id="ywi-cg-Z9b"/>

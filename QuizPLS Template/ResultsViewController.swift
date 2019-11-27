@@ -16,7 +16,7 @@ class ResultsViewController: UIViewController {
     var type: String!
     override func viewDidLoad() {
         super.viewDidLoad()
-        scoreLabel.text = "You scored \(score ?? 0)/\(totalQuestions ?? 0) on the \(type ?? "Unknown") quiz!"
+        scoreLabel.text = "You scored \(score ?? 0) points on the \(type ?? "Unknown") quiz!"
         // Do any additional setup after loading the view.
     }
     
