@@ -12,7 +12,7 @@ class OpenEndQuizViewController: UIViewController {
     @IBOutlet weak var answerButton: UIButton!
     @IBOutlet var tapGestureRecogniser: UITapGestureRecognizer!
     @IBOutlet weak var questionLabel: UILabel!
-    var questions = [OEQuestion(question: "What is 1+1?", correctAnswer: "2"), OEQuestion(question: "What is 𝐺𝜇𝜈+Λ𝜇𝜈−8𝜋𝐺𝑐4𝑇𝜇𝜈 equal to?", correctAnswer: "0")]
+    var questions = [OEQuestion(question: "What is 1+1?", correctAnswer: "2"), OEQuestion(question: "What is (𝐺𝜇𝜈+Λ𝜇𝜈−8𝜋𝐺𝑐4𝑇𝜇𝜈)²²²²² equal to?", correctAnswer: "0"), OEQuestion(question: "What is 𝐺𝜇𝜈+Λ𝜇𝜈−8𝜋𝐺𝑐4𝑇𝜇𝜈 equal to?", correctAnswer: "0")]
     var question: OEQuestion!
     var currentQuestion = 0
     var score = 0
