@@ -57,6 +57,7 @@ class MCQQuizViewController: UIViewController {
         dButton.layer.cornerRadius = 10
         question = questions[0]
         updateView(with: question)
+        tapGestureRecogniser.isEnabled = false
         // Do any additional setup after loading the view.
     }
     
