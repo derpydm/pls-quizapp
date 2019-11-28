@@ -18,6 +18,7 @@ class OpenEndQuizViewController: UIViewController {
     var score = 0
     func updateView(with question: OEQuestion) {
         
+        
         questionLabel.text = question.question
         button.isUserInteractionEnabled = true
     }
